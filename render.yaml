@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: wheelzoon-backend
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    root: backend
+  - type: static
+    name: wheelzoon-frontend
+    env: static
+    plan: free
+    buildCommand: npm install && npm run build
+    publishPath: frontend/dist
+    root: .
